@@ -45,7 +45,7 @@ draw = function() {
             if(entangled) {
                 textAlign(CENTER, CENTER);
                 fill(200);
-                textSize(80)
+                textSize(80);
                 noStroke();
                 // textFont(createFont('arial', 80));
                 text("?", width*x/5+width/10, height*y/5+height/10);
@@ -61,6 +61,7 @@ draw = function() {
     for(var i = 0; i < 9; i++) {
         var x = (i) % 3;
         var y = floor((i)/3);
+        stroke(0);
         if(board[i] === -1) {
             X(width*x/5+3*width/10, height*y/5+3*height/10, 35);
         } else if(board[i] === 1) {
@@ -115,7 +116,7 @@ draw = function() {
         } else if(winner === 2) {
             text("X and O win!", width/2, height/5-20);
         }
-        
+        stroke(0);
         strokeWeight(8);
         for(var i = 0; i < winnersLines.length; i++) {
             var j = winnersLines[i][0];
@@ -139,6 +140,7 @@ draw = function() {
     text("X wins: " + score[0], 0, 0);
     textAlign(RIGHT, TOP);
     text("O wins: " + score[1], width, 0);
+    stroke(0);
 };
 
 function measure() {
